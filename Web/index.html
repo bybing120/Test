@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Welcome to the Bakery (Quick Math)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes">
+  
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: #5E382D;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #unity-canvas {
+      width: 100%;
+      height: 100%;
+      max-width: 960px;  
+      max-height: 540px; 
+      background: #231F20;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 1024px) {
+      #unity-canvas {
+        width: 90%; 
+        height: auto; 
+        aspect-ratio: 16 / 9;
+      }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="unity-canvas" tabindex="-1"></canvas>
+
+  <script src="Build/WEB.loader.js"></script>
+  <script>
+    createUnityInstance(document.querySelector("#unity-canvas"), {
+      dataUrl: "Build/Web.data.br",
+      frameworkUrl: "Build/Web.framework.js.br",
+      codeUrl: "Build/Web.wasm.br",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "DefaultCompany",
+      productName: "Welcome to the Bakery (Quick Math)",
+      productVersion: "1.0",
+    });
+  </script>
+</body>
+</html>
